@@ -14,7 +14,7 @@ def gen():
         rval, frame = vc.read()
         cv2.imwrite('stream_frame.jpg', frame)
         yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + open('t.jpg', 'rb').read() + b'\r\n')
+               b'Content-Type: image/jpeg\r\n\r\n' + open('stream_frame.jpg', 'rb').read() + b'\r\n')
 
 @app.route('/video_feed')
 def video_feed():
