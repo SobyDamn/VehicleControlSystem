@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 """
+MOTOR INPUTS
 IN1 - GPIO23
 IN2 - GPIO24
 IN3 - GPIO27
@@ -36,6 +37,10 @@ def moveForward():
     m2_pwm1.ChangeDutyCycle(0)
     m2_pwm2.ChangeDutyCycle(100)
 
+"""
+TO turn the vehicle, one vehicle in opposite direction and one in same direction
+"""
+##Bias to control how much the wheel should move in the direction of the motion while changing direction
 bias = 100
 def moveRight():
     m1_pwm1.ChangeDutyCycle(0)
